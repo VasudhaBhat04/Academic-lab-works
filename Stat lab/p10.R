@@ -4,15 +4,15 @@ library(ggplot2)
 library(reshape2)
 
 # Read the Excel file
-fish_data <- read_excel("C:/Users/USER/OneDrive/Documents/GitHub/Academics/Stat lab/fishstory.xls")
+fish_data <- read_excel("fishstory.xls")
 
 # Summary of Price in 1970
 cat("Summary of Prices in 1970:\n")
-print(summary(fish_data$1970Price))
+print(summary(fish_data$Price_1970))
 
 # Summary of Price in 1980
 cat("Summary of Prices in 1980:\n")
-print(summary(fish_data$1980Price))
+print(summary(fish_data$Price_1980))
 
 # Melt data for ggplot (long format)
 fish_long <- melt(fish_data, 
@@ -31,7 +31,7 @@ ggplot(fish_long, aes(x = Year, y = Price, group = Type_fish, color = Type_fish)
   theme(legend.position = "none")
 )
 # Paired t-test (same fish types across years)
-t_test_result <- t.test(fish_data$1980Price, fish_data$1970Price, paired = TRUE)
+t_test_result <- t.test(fish_data$Price_1980, fish_data$Price_1970, paired = TRUE)
 
 cat("Paired t-test Results:\n")
 print(t_test_result)
