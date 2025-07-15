@@ -1,41 +1,35 @@
-# Load required libraries
-library(readxl)
-library(ggplot2)
-library(reshape2)
+# Data
+sales <- c(2, 4, 6, 9, 12, 34, 45)
+Tv <- c(1, 2, 4, 7, 9, 11, 15)
 
-# Read the Excel file
-fish_data <- read_excel("fishstory.xls")
+# Create a data frame
+data <- data.frame(sales, Tv)
 
-# Summary of Price in 1970
-cat("Summary of Prices in 1970:\n")
-print(summary(fish_data$Price_1970))
+# Linear regression model
+model <- lm(sales ~ Tv, data = data)
 
-# Summary of Price in 1980
-cat("Summary of Prices in 1980:\n")
-print(summary(fish_data$Price_1980))
+# Model summary
+summary(model)
 
-# Melt data for ggplot (long format)
-fish_long <- melt(fish_data, 
-                  id.vars = "Type_fish",
-                  measure.vars = c("Price_1970", "Price_1980"),
-                  variable.name = "Year",
-                  value.name = "Price")
+# Extract intercept and slope
+intercept <- coef(model)[1]
+slope <- coef(model)[2]
 
-# Line + point plot of prices across years
-print(
-ggplot(fish_long, aes(x = Year, y = Price, group = Type_fish, color = Type_fish)) +
-  geom_line(size = 1) +
-  geom_point(size = 2) +
-  labs(title = "Fish Prices 1970 vs 1980", x = "Year", y = "Price") +
-  theme_minimal() +
-  theme(legend.position = "none")
-)
-# Paired t-test (same fish types across years)
-t_test_result <- t.test(fish_data$Price_1980, fish_data$Price_1970, paired = TRUE)
+# Print coefficients
+cat("Intercept:", intercept, "\n")
+cat("Slope:", slope, "\n")
 
-cat("Paired t-test Results:\n")
-print(t_test_result)
+# Plot
 
+plot(data$Tv, data$sales,
+     main = "Sales vs TV Advertising Budget",
+     xlab = "TV Advertising Budget",
+     ylab = "Sales Units",
+     pch = 19,
+     col = "blue")
+
+# Add regression line
+abline(model, col = "red", lwd = 2)
 cat("Interpretation:\n")
 cat("Mean difference (1980 - 1970): ", mean(fish_data$Price_1980 - fish_data$Price_1970), "\n")
 cat("95% confidence interval of difference: ", t_test_result$conf.int, "\n")
