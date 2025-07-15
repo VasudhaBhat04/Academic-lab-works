@@ -37,5 +37,5 @@ cat("Paired t-test Results:\n")
 print(t_test_result)
 
 cat("Interpretation:\n")
-cat("Mean difference (1980 - 1970): ", mean(fish_data$1980Price - fish_data$1970Price), "\n")
+cat("Mean difference (1980 - 1970): ", mean(fish_data$Price_1980 - fish_data$Price_1970), "\n")
 cat("95% confidence interval of difference: ", t_test_result$conf.int, "\n")
