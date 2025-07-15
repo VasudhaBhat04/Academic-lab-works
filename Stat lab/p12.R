@@ -1,0 +1,13 @@
+data(mtcars)
+print(head(mtcars))
+anova_result <- aov(mpg ~ factor(cyl), data = mtcars)
+
+print(summary(anova_result))   # ANOVA result
+print(kruskal.test(mpg ~ factor(cyl), data = mtcars))  # Kruskal-Wallis
+print(wilcox.test(mpg ~ factor(cyl), data = subset_data, exact = FALSE))  # Mann-Whitney
+windows()
+print(
+boxplot(mpg ~ factor(cyl), data = mtcars,
+        main = "MPG by Cylinder Count",
+        xlab = "Cylinders", ylab = "MPG", col = c("skyblue","orange","green"))
+)
