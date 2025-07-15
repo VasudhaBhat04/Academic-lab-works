@@ -12,7 +12,7 @@ library(GGally)
 # -------------------------------
 # 2. Load Dataset
 # -------------------------------
-data <- read.csv("C:/Users/USER/OneDrive/Documents/GitHub/Academics/Stat lab/Mall_Customers.csv")
+data <- read.csv("Mall_Customers.csv")
 
 # -------------------------------
 # 3. Basic Preprocessing
