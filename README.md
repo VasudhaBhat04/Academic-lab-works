@@ -3,3 +3,6 @@ This folder contains a collection of TCL programs developed for simulating netwo
 
 # Database Management System Lab (DBMS Lab)
 This folder contains a collection of mysql programs as part of the DBMS Laboratory coursework.
+
+# Statistical Methods Lab (Stat Lab)
+This folder contains a collection of R programs as part of the Statistical Methods Laboratory coursework.
