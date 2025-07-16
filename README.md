@@ -6,3 +6,6 @@ This folder contains a collection of mysql programs as part of the DBMS Laborato
 
 # Statistical Methods Lab (Stat Lab)
 This folder contains a collection of R programs as part of the Statistical Methods Laboratory coursework.
+
+# Analysis and Design of Algorithms Lab (Ada Lab)
+This folder contains a collection of C++ programs as part of the Analysis and Design of Algorithms Laboratory coursework.
