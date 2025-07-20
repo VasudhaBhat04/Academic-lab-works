@@ -10,9 +10,6 @@ This folder contains a collection of R programs as part of the Statistical Metho
 # Analysis and Design of Algorithms Lab (Ada Lab)
 This folder contains a collection of C++ programs as part of the Analysis and Design of Algorithms Laboratory coursework.
 
-# C-Programming Lab (C Lab)
-This folder contains a collection of C programs as part of the Introduction to C-Programming Laboratory coursework.
-
 # Object Oriented Programming Lab (OOPS Lab)
 This folder contains a collection of C++ programs as part of the Object Oriented Programming Laboratory coursework.
 
