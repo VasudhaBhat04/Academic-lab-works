@@ -10,8 +10,12 @@ library(dplyr)
 # -------------------------------
 # 2. Load Dataset
 # -------------------------------
+<<<<<<< HEAD
 data(iris)
 head(iris)
+=======
+data <- read.csv("Mall_Customers.csv")
+>>>>>>> a02430d9ccdb1630717044abe6d1755815112e33
 
 # -------------------------------
 # 3. Normalize Numeric Columns
@@ -52,6 +56,7 @@ ggplot(iris_norm, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
        x = "Sepal Length", y = "Sepal Width") +
   theme_minimal()
 
+<<<<<<< HEAD
 # -------------------------------
 # 8. 3D Visualization using Plotly
 # -------------------------------
@@ -64,3 +69,11 @@ plot_ly(iris_norm,
         type = 'scatter3d',
         mode = 'markers') %>%
   layout(title = "Iris Species in 3D Space")
+=======
+library(plotly)
+print(
+plot_ly(data_norm, x = ~Age, y = ~Income, z = ~Score,
+        color = ~Segment, colors = c('#FF5733','#33FF57','#3357FF','#FF33A1'),
+        type = 'scatter3d', mode = 'markers')
+)
+>>>>>>> a02430d9ccdb1630717044abe6d1755815112e33
