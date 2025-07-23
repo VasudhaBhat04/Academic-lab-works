@@ -22,8 +22,7 @@ model <- HoltWinters(ts_data)
 forecast_data <- forecast(model, h = 24)
 
 # Plot the forecast
-windows()
-print(
+
 plot(forecast_data,
      main = "Monthly Antidiabetic Drug Sales Forecast",
      xlab = "Time",
@@ -31,4 +30,3 @@ plot(forecast_data,
      col.main = "darkblue",
      col.lab = "black")
 
-)
