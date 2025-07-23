@@ -10,8 +10,7 @@ print(paste("correlation between mpg and weight is:", round(correlation,2)))
 
 
 # Create Q-Q plot to check normality of mpg
-windows()
-print(
+
 ggplot(data = mtcars, aes(sample = mpg)) + 
   stat_qq() + 
   stat_qq_line() + 
@@ -21,4 +20,3 @@ ggplot(data = mtcars, aes(sample = mpg)) +
     y = "MPG (Sample)"
   ) +
   theme_minimal()
-)
