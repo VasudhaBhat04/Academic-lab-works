@@ -23,14 +23,14 @@ fish_long <- melt(fish_data,
                   value.name = "Price")
 
 # Line + point plot of prices across years
-print(
+
 ggplot(fish_long, aes(x = Year, y = Price, group = Type_fish, color = Type_fish)) +
   geom_line(size = 1) +
   geom_point(size = 2) +
   labs(title = "Fish Prices 1970 vs 1980", x = "Year", y = "Price") +
   theme_minimal() +
   theme(legend.position = "none")
-)
+
 # Paired t-test (same fish types across years)
 t_test_result <- t.test(fish_data$Price_1980, fish_data$Price_1970, paired = TRUE)
 
