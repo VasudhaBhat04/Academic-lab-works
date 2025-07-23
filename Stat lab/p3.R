@@ -23,9 +23,8 @@ cat("Barry's SD:", round(sd_bary, 2), "| SE:", round(se_bary, 2), "\n")
 
 
 # 4. Boxplot 
-print(
+
 ggplot(df, aes(x = "Barry", y = `Barry.Price`)) + 
 geom_boxplot(fill = "skyblue") + 
 geom_boxplot(aes(x = "Mary", y = `Mary.Price`), fill = "lightgreen") + 
 labs(title = "Boxplot of Price Quotes", x = "Person", y = "Price")
-)
