@@ -30,6 +30,3 @@ plot(data$Tv, data$sales,
 
 # Add regression line
 abline(model, col = "red", lwd = 2)
-cat("Interpretation:\n")
-cat("Mean difference (1980 - 1970): ", mean(fish_data$Price_1980 - fish_data$Price_1970), "\n")
-cat("95% confidence interval of difference: ", t_test_result$conf.int, "\n")
