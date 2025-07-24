@@ -30,5 +30,6 @@ plot(forecast_data,
      col.main = "darkblue",
      col.lab = "black")
 
+#optional plot
 decomposed <- decompose(ts_data)
 plot(decomposed)
