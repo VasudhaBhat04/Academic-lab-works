@@ -21,22 +21,27 @@ ggplot(data = mtcars, aes(sample = mpg)) +
   ) +
   theme_minimal()
 
-#Optional 
+#Optional 2 graphs side by side
 library(gridExtra)
+p1<-ggplot(data = mtcars, aes(sample = mpg)) + 
+  stat_qq() + 
+  stat_qq_line() + 
+  labs(
+    title = "Q-Q Plot for MPG",
+    x = "Theoretical Quantiles",
+    y = "MPG (Sample)"
+  ) +
+  theme_minimal()
 
-# Q-Q plot for mpg
-p1 <- ggplot(mtcars, aes(sample = mpg)) +
-  stat_qq() +
-  stat_qq_line() +
-  labs(title = "Q-Q Plot for MPG")
+p2<-ggplot(data = mtcars, aes(sample = wt)) + 
+  stat_qq() + 
+  stat_qq_line() + 
+  labs(
+    title = "Q-Q Plot for wt",
+    x = "Theoretical Quantiles",
+    y = "Weight (Sample)"
+  ) +
+  theme_minimal()
 
 
-# Q-Q plot for wt
-p2 <- ggplot(mtcars, aes(sample = wt)) +
-  stat_qq() +
-  stat_qq_line() +
-  labs(title = "Q-Q Plot for Weight")
-
-# Arrange side by side
 grid.arrange(p1, p2, ncol = 2)
-
