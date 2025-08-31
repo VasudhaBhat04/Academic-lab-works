@@ -10,3 +10,4 @@ plot(mtcars$wt, mtcars$mpg,
      pch = 19, col = "blue")
 
 abline(lm(mpg ~ wt, data = mtcars), col = "red", lwd = 2)
+grid(col = "lightgray", lty = "dotted") #optional grid lines for the plot
