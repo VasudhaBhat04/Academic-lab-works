@@ -20,3 +20,23 @@ ggplot(data = mtcars, aes(sample = mpg)) +
     y = "MPG (Sample)"
   ) +
   theme_minimal()
+
+#Optional 
+library(gridExtra)
+
+# Q-Q plot for mpg
+p1 <- ggplot(mtcars, aes(sample = mpg)) +
+  stat_qq() +
+  stat_qq_line() +
+  labs(title = "Q-Q Plot for MPG")
+
+
+# Q-Q plot for wt
+p2 <- ggplot(mtcars, aes(sample = wt)) +
+  stat_qq() +
+  stat_qq_line() +
+  labs(title = "Q-Q Plot for Weight")
+
+# Arrange side by side
+grid.arrange(p1, p2, ncol = 2)
+
