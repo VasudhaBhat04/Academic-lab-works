@@ -21,8 +21,8 @@ cor_matrix <- cor(numeric_data)
 # Print the correlation matrix 
 print(cor_matrix) 
 # Find strongest positive and negative correlation pairs 
-cor_matrix[lower.tri(cor_matrix, diag = TRUE)] <- NA  # Keep only upper 
-triangle 
+cor_matrix[lower.tri(cor_matrix, diag = TRUE)] <- NA  # Keep only upper triangle 
+
 cor_values <- as.data.frame(as.table(cor_matrix)) 
 cor_values <- na.omit(cor_values) 
 # Strongest positive correlation 
