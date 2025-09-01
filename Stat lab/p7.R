@@ -2,7 +2,7 @@
 # Load required libraries
 library(readxl)
 library(ggplot2)
-library(reshape2)
+
 
 # Read the Excel file
 fish_data <- read_excel("fishstory.xls")
@@ -37,6 +37,7 @@ boxplot(fish_data$`1970Price`, fish_data$`1980Price`,
         col = c("skyblue", "orange"))
 #optional Line Plot (Paired Data) plot
 # Melt data for ggplot (long format)
+library(reshape2)
 fish_long <- melt(fish_data, 
                   id.vars = "Type_fish",
                   measure.vars = c("Price_1970", "Price_1980"),
