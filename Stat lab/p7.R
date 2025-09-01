@@ -25,7 +25,14 @@ cat("Interpretation:\n")
 cat("Mean difference (1980 - 1970): ", mean(fish_data$Price_1980 - fish_data$Price_1970), "\n")
 cat("95% confidence interval of difference: ", t_test_result$conf.int, "\n")
 
-#optional plot
+
+#optional boxplot plot
+boxplot(fish_data$`1970Price`, fish_data$`1980Price`,
+        names = c("1970", "1980"),
+        main = "Fish Prices in 1970 vs 1980",
+        ylab = "Price",
+        col = c("skyblue", "orange"))
+#optional Line Plot (Paired Data) plot
 # Melt data for ggplot (long format)
 fish_long <- melt(fish_data, 
                   id.vars = "Type_fish",
@@ -34,7 +41,6 @@ fish_long <- melt(fish_data,
                   value.name = "Price")
 
 # Line + point plot of prices across years
-
 ggplot(fish_long, aes(x = Year, y = Price, group = Type_fish, color = Type_fish)) +
   geom_line(size = 1) +
   geom_point(size = 2) +
