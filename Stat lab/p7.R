@@ -26,7 +26,10 @@ cat("Mean difference (1980 - 1970): ", mean(fish_data$Price_1980 - fish_data$Pri
 cat("95% confidence interval of difference: ", t_test_result$conf.int, "\n")
 
 
-#optional boxplot plot
+
+
+
+#optional boxplot
 boxplot(fish_data$`1970Price`, fish_data$`1980Price`,
         names = c("1970", "1980"),
         main = "Fish Prices in 1970 vs 1980",
