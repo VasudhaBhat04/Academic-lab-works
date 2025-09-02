@@ -30,3 +30,6 @@ plot(data$Tv, data$sales,
 
 # Add regression line
 abline(model, col = "red", lwd = 2)
+
+#optional grid lines for the plot
+grid(col = "lightgray", lty = "dotted") 
